@@ -40,14 +40,14 @@ jobs:
         run: |
            pwd
            ls 
-           echo "path:" $pwd
-           echo "path1:" pwd
+           echo "path:" ${{ secrets.ACCESS_KEY }}
+           echo aws-access-key-id
 
      # Deploy to AWS CloudFormation
-      - name: Deploy to AWS CloudFormation
-        uses: aws-actions/aws-cloudformation-github-deploy@v1
-        with:
-           name: test-stack
-           template: ./ec2.yml
-           no-fail-on-empty-changeset: "1"
+       #- name: Deploy to AWS CloudFormation
+      #   uses: aws-actions/aws-cloudformation-github-deploy@v1
+        # with:
+          #  name: test-stack
+            #template: ./ec2.yml
+            #no-fail-on-empty-changeset: "1"
         #   parameter-overrides: "EC2InstanceType=t2.micro"
